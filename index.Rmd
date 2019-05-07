@@ -1,0 +1,44 @@
+---
+title       : Interactive Documents with R
+subtitle    : Slidify + Shiny
+author      : Adam Preston
+job         : R Hacker
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : solarized_light      # 
+widgets     : [bootstrap, quiz, shiny, interactive]          
+mode        : selfcontained # {standalone, draft}
+ext_widgets : {rCharts: [libraries/nvd3, libraries/highcharts]}
+
+--- &radio
+
+## Interactive Quiz
+
+What is 1 + 1?
+
+1. 1
+2. _2_
+3. 3
+4. 4
+
+*** .hint
+
+This is a hint
+
+*** .explanation
+
+This is an explanation
+
+---
+
+## Interactive Chart
+
+```{r echo = F, results = 'asis'}
+require(rCharts)
+haireye <- as.data.frame(HairEyeColor)
+n1 <- nPlot(Freq ~ Hair, group = 'Eye', type = 'multiBarChart',
+    data = subset(haireye, Sex == "Male")
+)
+n1$print('chart1')
+```
+

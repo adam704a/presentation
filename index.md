@@ -1,7 +1,7 @@
 ---
 title       : Interactive Documents with R
 subtitle    : Slidify + Shiny
-author      : Ramnath Vaidyanathan
+author      : Adam Preston
 job         : R Hacker
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -9,7 +9,9 @@ hitheme     : solarized_light      #
 widgets     : [bootstrap, quiz, shiny, interactive]          
 mode        : selfcontained # {standalone, draft}
 ext_widgets : {rCharts: [libraries/nvd3, libraries/highcharts]}
-github      : {user: slidify, repo: idocs}
+
+
+
 --- &radio
 
 ## Interactive Quiz
@@ -204,19 +206,48 @@ This is an explanation
 
 ```r
 require(googleVis)
+```
+
+```
+## Loading required package: googleVis
+```
+
+```
+## Creating a generic function for 'toJSON' from package 'jsonlite' in package 'googleVis'
+```
+
+```
+## 
+## Welcome to googleVis version 0.6.3
+## 
+## Please read Google's Terms of Use
+## before you start using the package:
+## https://developers.google.com/terms/
+## 
+## Note, the plot method of googleVis will by default use
+## the standard browser to display its output.
+## 
+## See the googleVis package vignettes for more details,
+## or visit https://github.com/mages/googleVis.
+## 
+## To suppress this message use:
+## suppressPackageStartupMessages(library(googleVis))
+```
+
+```r
 M1 <- gvisMotionChart(Fruits, idvar = 'Fruit', timevar = 'Year')
 print(M1, tag = 'chart')
 ```
 
 <!-- MotionChart generated in R 3.5.2 by googleVis 0.6.3 package -->
-<!-- Tue May  7 16:11:32 2019 -->
+<!-- Tue May  7 16:49:56 2019 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMotionChartIDda1a5292ef3e () {
+function gvisDataMotionChartID906a6519094b () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -314,15 +345,15 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMotionChartIDda1a5292ef3e() {
-var data = gvisDataMotionChartIDda1a5292ef3e();
+function drawChartMotionChartID906a6519094b() {
+var data = gvisDataMotionChartID906a6519094b();
 var options = {};
 options["width"] = 600;
 options["height"] = 500;
 options["state"] = "";
 
     var chart = new google.visualization.MotionChart(
-    document.getElementById('MotionChartIDda1a5292ef3e')
+    document.getElementById('MotionChartID906a6519094b')
     );
     chart.draw(data,options);
     
@@ -346,9 +377,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMotionChartIDda1a5292ef3e);
+callbacks.push(drawChartMotionChartID906a6519094b);
 })();
-function displayChartMotionChartIDda1a5292ef3e() {
+function displayChartMotionChartID906a6519094b() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -372,11 +403,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartIDda1a5292ef3e"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID906a6519094b"></script>
  
 <!-- divChart -->
   
-<div id="MotionChartIDda1a5292ef3e" 
+<div id="MotionChartID906a6519094b" 
   style="width: 600; height: 500;">
 </div>
 
@@ -400,31 +431,7 @@ slidifyUI(
 ```
 
 ```
-## <div class="row-fluid">
-##   <div class="col-sm-4">
-##     <form class="well">
-##       <div class="form-group shiny-input-container">
-##         <label class="control-label" for="sex">Choose Sex</label>
-##         <div>
-##           <select id="sex"><option value="Male" selected>Male</option>
-## <option value="Female">Female</option></select>
-##           <script type="application/json" data-for="sex" data-nonempty="">{}</script>
-##         </div>
-##       </div>
-##       <div class="form-group shiny-input-container">
-##         <label class="control-label" for="type">Choose Type</label>
-##         <div>
-##           <select id="type"><option value="multiBarChart" selected>multiBarChart</option>
-## <option value="multiBarHorizontalChart">multiBarHorizontalChart</option></select>
-##           <script type="application/json" data-for="type" data-nonempty="">{}</script>
-##         </div>
-##       </div>
-##     </form>
-##   </div>
-##   <div class="col-sm-8">
-##     <div id="nvd3plot" class="shiny-html-output nvd3 rChart"></div>
-##   </div>
-## </div>
+## Error in slidifyUI(sidebarPanel(selectInput("sex", "Choose Sex", c("Male", : could not find function "slidifyUI"
 ```
 
 --- &interactive
@@ -533,7 +540,7 @@ xtable(head(mtcars))
 
 ```
 ## <!-- html table generated in R 3.5.2 by xtable 1.8-3 package -->
-## <!-- Tue May  7 15:22:44 2019 -->
+## <!-- Tue May  7 16:49:56 2019 -->
 ## <table border=1>
 ## <tr> <th>  </th> <th> mpg </th> <th> cyl </th> <th> disp </th> <th> hp </th> <th> drat </th> <th> wt </th> <th> qsec </th> <th> vs </th> <th> am </th> <th> gear </th> <th> carb </th>  </tr>
 ##   <tr> <td align="right"> Mazda RX4 </td> <td align="right"> 21.00 </td> <td align="right"> 6.00 </td> <td align="right"> 160.00 </td> <td align="right"> 110.00 </td> <td align="right"> 3.90 </td> <td align="right"> 2.62 </td> <td align="right"> 16.46 </td> <td align="right"> 0.00 </td> <td align="right"> 1.00 </td> <td align="right"> 4.00 </td> <td align="right"> 4.00 </td> </tr>

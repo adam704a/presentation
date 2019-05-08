@@ -35,7 +35,6 @@
 <script src="libraries/widgets/highcharts/js/jquery-1.9.1.min.js"></script>
 <script src="libraries/widgets/highcharts/js/highcharts.js"></script>
 <script src="libraries/widgets/highcharts/js/highcharts-more.js"></script>
-<script src="libraries/widgets/highcharts/js/exporting.js"></script>
 
 
 </head>
@@ -263,294 +262,10 @@
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Interactive Console</h2>
+    <h2>A Line Chart</h2>
   </hgroup>
   <article data-timings="">
-     
-<div class='row-fluid'>
-  <div class='span5'>
-    <form id="knitForm3" data-cell="3">
-      <pre><code class="r">require(googleVis)
-</code></pre>
-
-<pre><code>## Loading required package: googleVis
-</code></pre>
-
-<pre><code>## Creating a generic function for &#39;toJSON&#39; from package &#39;jsonlite&#39; in package &#39;googleVis&#39;
-</code></pre>
-
-<pre><code>## 
-## Welcome to googleVis version 0.6.3
-## 
-## Please read Google&#39;s Terms of Use
-## before you start using the package:
-## https://developers.google.com/terms/
-## 
-## Note, the plot method of googleVis will by default use
-## the standard browser to display its output.
-## 
-## See the googleVis package vignettes for more details,
-## or visit https://github.com/mages/googleVis.
-## 
-## To suppress this message use:
-## suppressPackageStartupMessages(library(googleVis))
-</code></pre>
-
-<pre><code class="r">M1 &lt;- gvisMotionChart(Fruits, idvar = &#39;Fruit&#39;, timevar = &#39;Year&#39;)
-print(M1, tag = &#39;chart&#39;)
-</code></pre>
-
-<!-- MotionChart generated in R 3.5.2 by googleVis 0.6.3 package -->
-
-<!-- Tue May  7 16:49:56 2019 -->
-
-<!-- jsHeader -->
-
-<script type="text/javascript">
- 
-// jsData 
-function gvisDataMotionChartID906a6519094b () {
-var data = new google.visualization.DataTable();
-var datajson =
-[
- [
-"Apples",
-2008,
-"West",
-98,
-78,
-20,
-"2008-12-31"
-],
-[
-"Apples",
-2009,
-"West",
-111,
-79,
-32,
-"2009-12-31"
-],
-[
-"Apples",
-2010,
-"West",
-89,
-76,
-13,
-"2010-12-31"
-],
-[
-"Oranges",
-2008,
-"East",
-96,
-81,
-15,
-"2008-12-31"
-],
-[
-"Bananas",
-2008,
-"East",
-85,
-76,
-9,
-"2008-12-31"
-],
-[
-"Oranges",
-2009,
-"East",
-93,
-80,
-13,
-"2009-12-31"
-],
-[
-"Bananas",
-2009,
-"East",
-94,
-78,
-16,
-"2009-12-31"
-],
-[
-"Oranges",
-2010,
-"East",
-98,
-91,
-7,
-"2010-12-31"
-],
-[
-"Bananas",
-2010,
-"East",
-81,
-71,
-10,
-"2010-12-31"
-] 
-];
-data.addColumn('string','Fruit');
-data.addColumn('number','Year');
-data.addColumn('string','Location');
-data.addColumn('number','Sales');
-data.addColumn('number','Expenses');
-data.addColumn('number','Profit');
-data.addColumn('string','Date');
-data.addRows(datajson);
-return(data);
-}
- 
-// jsDrawChart
-function drawChartMotionChartID906a6519094b() {
-var data = gvisDataMotionChartID906a6519094b();
-var options = {};
-options["width"] = 600;
-options["height"] = 500;
-options["state"] = "";
-
-    var chart = new google.visualization.MotionChart(
-    document.getElementById('MotionChartID906a6519094b')
-    );
-    chart.draw(data,options);
-    
-
-}
-  
- 
-// jsDisplayChart
-(function() {
-var pkgs = window.__gvisPackages = window.__gvisPackages || [];
-var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
-var chartid = "motionchart";
-  
-// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
-var i, newPackage = true;
-for (i = 0; newPackage && i < pkgs.length; i++) {
-if (pkgs[i] === chartid)
-newPackage = false;
-}
-if (newPackage)
-  pkgs.push(chartid);
-  
-// Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMotionChartID906a6519094b);
-})();
-function displayChartMotionChartID906a6519094b() {
-  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
-  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
-  window.clearTimeout(window.__gvisLoad);
-  // The timeout is set to 100 because otherwise the container div we are
-  // targeting might not be part of the document yet
-  window.__gvisLoad = setTimeout(function() {
-  var pkgCount = pkgs.length;
-  google.load("visualization", "1", { packages:pkgs, callback: function() {
-  if (pkgCount != pkgs.length) {
-  // Race condition where another setTimeout call snuck in after us; if
-  // that call added a package, we must not shift its callback
-  return;
-}
-while (callbacks.length > 0)
-callbacks.shift()();
-} });
-}, 100);
-}
- 
-// jsFooter
-</script>
- 
-
-<!-- jsChart -->  
-
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID906a6519094b"></script>
- 
-
-<!-- divChart -->
-
-<div id="MotionChartID906a6519094b" 
-  style="width: 600; height: 500;">
-</div>
-
-      <div id='aceeditor3' style="height:px;"></div>
-      <div class='interactive btn-toolbar pull-left'>
-        <div class='btn-group'>
-          <a class='btn btn-small action-button' id='runCode3' data-action='runCode'
-            data-cell='3' rel='tooltip' data-title='Run Code'>
-            <i class='icon-play'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='testCode3' data-action='testCode'
-             data-cell='3' rel='tooltip' data-title='Test Code'>
-            <i class='icon-check'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='clearResult3' data-action='clearResult'
-             data-cell='3' rel='tooltip' data-title='Clear Output'>
-            <i class="icon-remove"></i>
-          </a>
-          <a class='btn  btn-small iBtn' id='getHint3' rel='tooltip' 
-            data-title="Get Hint" data-action='getHint'
-            data-cell='3' data-hint="">
-            <i class="icon-bookmark"></i>
-          </a>
-        </div>
-      </div>    </form>
-  </div>
-  <div class='span7'>
-    <iframe id="knitResult3" class='shiny-html-output'></iframe>
-  </div>
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-4" style="background:;">
-  <hgroup>
-    <h2>Interactive Chart with Shiny Controls</h2>
-  </hgroup>
-  <article data-timings="">
-    <pre><code class="r">slidifyUI(
-  sidebarPanel(
-    selectInput(&#39;sex&#39;, &#39;Choose Sex&#39;, c(&#39;Male&#39;, &#39;Female&#39;)),
-    selectInput(&#39;type&#39;, &#39;Choose Type&#39;,
-      c(&#39;multiBarChart&#39;, &#39;multiBarHorizontalChart&#39;)
-    )
-  ),
-  mainPanel(
-    tags$div(id = &#39;nvd3plot&#39;, class=&#39;shiny-html-output nvd3 rChart&#39;)
-  )
-)
-</code></pre>
-
-<pre><code>## Error in slidifyUI(sidebarPanel(selectInput(&quot;sex&quot;, &quot;Choose Sex&quot;, c(&quot;Male&quot;, : could not find function &quot;slidifyUI&quot;
-</code></pre>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-5" style="background:;">
-  <hgroup>
-    <h2>Interactive Console</h2>
-  </hgroup>
-  <article data-timings="">
-     
-<div class='row-fluid'>
-  <div class='span5'>
-    <form id="knitForm5" data-cell="5">
-      <pre><code class="r">require(rCharts)
-a &lt;- Highcharts$new()
-a$chart(type = &quot;spline&quot;)
-a$series(data = c(1, 3, 2, 4, 5, 4, 6, 2, 3, 5, NA), dashStyle = &quot;longdash&quot;)
-a$series(data = c(NA, 4, 1, 3, 4, 2, 9, 1, 2, 3, 4), dashStyle = &quot;shortdot&quot;)
-a$legend(symbolWidth = 80)
-a$print(&#39;chart3&#39;)
-</code></pre>
-
-<div id = 'chart3' class = 'rChart highcharts'></div>
+    <div id = 'chart3' class = 'rChart highcharts'></div>
 
 <script type='text/javascript'>
     (function($){
@@ -621,95 +336,46 @@ null
     })(jQuery);
 </script>
 
-      <div id='aceeditor5' style="height:px;"></div>
-      <div class='interactive btn-toolbar pull-left'>
-        <div class='btn-group'>
-          <a class='btn btn-small action-button' id='runCode5' data-action='runCode'
-            data-cell='5' rel='tooltip' data-title='Run Code'>
-            <i class='icon-play'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='testCode5' data-action='testCode'
-             data-cell='5' rel='tooltip' data-title='Test Code'>
-            <i class='icon-check'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='clearResult5' data-action='clearResult'
-             data-cell='5' rel='tooltip' data-title='Clear Output'>
-            <i class="icon-remove"></i>
-          </a>
-          <a class='btn  btn-small iBtn' id='getHint5' rel='tooltip' 
-            data-title="Get Hint" data-action='getHint'
-            data-cell='5' data-hint="">
-            <i class="icon-bookmark"></i>
-          </a>
-        </div>
-      </div>    </form>
-  </div>
-  <div class='span7'>
-    <iframe id="knitResult5" class='shiny-html-output'></iframe>
-  </div>
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-4" style="background:;">
   <hgroup>
     <h2>Results = Markup</h2>
   </hgroup>
   <article data-timings="">
-     
-<div class='row-fluid'>
-  <div class='span5'>
-    <form id="knitForm6" data-cell="6">
-      <pre><code class="r">require(xtable)
-</code></pre>
+    <!-- html table generated in R 3.5.2 by xtable 1.8-3 package -->
 
-<pre><code>## Loading required package: xtable
-</code></pre>
+<!-- Wed May  8 12:28:56 2019 -->
 
-<pre><code class="r">options(xtable.type = &#39;html&#39;)
-xtable(head(mtcars))
-</code></pre>
+<table border=1>
+<tr> <th>  </th> <th> mpg </th> <th> cyl </th> <th> disp </th> <th> hp </th> <th> drat </th> <th> wt </th> <th> qsec </th> <th> vs </th> <th> am </th> <th> gear </th> <th> carb </th>  </tr>
+  <tr> <td align="right"> Mazda RX4 </td> <td align="right"> 21.00 </td> <td align="right"> 6.00 </td> <td align="right"> 160.00 </td> <td align="right"> 110.00 </td> <td align="right"> 3.90 </td> <td align="right"> 2.62 </td> <td align="right"> 16.46 </td> <td align="right"> 0.00 </td> <td align="right"> 1.00 </td> <td align="right"> 4.00 </td> <td align="right"> 4.00 </td> </tr>
+  <tr> <td align="right"> Mazda RX4 Wag </td> <td align="right"> 21.00 </td> <td align="right"> 6.00 </td> <td align="right"> 160.00 </td> <td align="right"> 110.00 </td> <td align="right"> 3.90 </td> <td align="right"> 2.88 </td> <td align="right"> 17.02 </td> <td align="right"> 0.00 </td> <td align="right"> 1.00 </td> <td align="right"> 4.00 </td> <td align="right"> 4.00 </td> </tr>
+  <tr> <td align="right"> Datsun 710 </td> <td align="right"> 22.80 </td> <td align="right"> 4.00 </td> <td align="right"> 108.00 </td> <td align="right"> 93.00 </td> <td align="right"> 3.85 </td> <td align="right"> 2.32 </td> <td align="right"> 18.61 </td> <td align="right"> 1.00 </td> <td align="right"> 1.00 </td> <td align="right"> 4.00 </td> <td align="right"> 1.00 </td> </tr>
+  <tr> <td align="right"> Hornet 4 Drive </td> <td align="right"> 21.40 </td> <td align="right"> 6.00 </td> <td align="right"> 258.00 </td> <td align="right"> 110.00 </td> <td align="right"> 3.08 </td> <td align="right"> 3.21 </td> <td align="right"> 19.44 </td> <td align="right"> 1.00 </td> <td align="right"> 0.00 </td> <td align="right"> 3.00 </td> <td align="right"> 1.00 </td> </tr>
+  <tr> <td align="right"> Hornet Sportabout </td> <td align="right"> 18.70 </td> <td align="right"> 8.00 </td> <td align="right"> 360.00 </td> <td align="right"> 175.00 </td> <td align="right"> 3.15 </td> <td align="right"> 3.44 </td> <td align="right"> 17.02 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 3.00 </td> <td align="right"> 2.00 </td> </tr>
+  <tr> <td align="right"> Valiant </td> <td align="right"> 18.10 </td> <td align="right"> 6.00 </td> <td align="right"> 225.00 </td> <td align="right"> 105.00 </td> <td align="right"> 2.76 </td> <td align="right"> 3.46 </td> <td align="right"> 20.22 </td> <td align="right"> 1.00 </td> <td align="right"> 0.00 </td> <td align="right"> 3.00 </td> <td align="right"> 1.00 </td> </tr>
+   </table>
 
-<pre><code>## &lt;!-- html table generated in R 3.5.2 by xtable 1.8-3 package --&gt;
-## &lt;!-- Tue May  7 16:49:56 2019 --&gt;
-## &lt;table border=1&gt;
-## &lt;tr&gt; &lt;th&gt;  &lt;/th&gt; &lt;th&gt; mpg &lt;/th&gt; &lt;th&gt; cyl &lt;/th&gt; &lt;th&gt; disp &lt;/th&gt; &lt;th&gt; hp &lt;/th&gt; &lt;th&gt; drat &lt;/th&gt; &lt;th&gt; wt &lt;/th&gt; &lt;th&gt; qsec &lt;/th&gt; &lt;th&gt; vs &lt;/th&gt; &lt;th&gt; am &lt;/th&gt; &lt;th&gt; gear &lt;/th&gt; &lt;th&gt; carb &lt;/th&gt;  &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; Mazda RX4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 21.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 6.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 160.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 110.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.90 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 2.62 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 16.46 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; Mazda RX4 Wag &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 21.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 6.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 160.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 110.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.90 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 2.88 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 17.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; Datsun 710 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 22.80 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 108.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 93.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.85 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 2.32 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.61 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; Hornet 4 Drive &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 21.40 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 6.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 258.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 110.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.08 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.21 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 19.44 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; Hornet Sportabout &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.70 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 8.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 360.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 175.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.15 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.44 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 17.02 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 2.00 &lt;/td&gt; &lt;/tr&gt;
-##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; Valiant &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.10 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 6.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 225.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 105.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 2.76 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.46 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.22 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 0.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 3.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 1.00 &lt;/td&gt; &lt;/tr&gt;
-##    &lt;/table&gt;
-</code></pre>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-      <div id='aceeditor6' style="height:px;"></div>
-      <div class='interactive btn-toolbar pull-left'>
-        <div class='btn-group'>
-          <a class='btn btn-small action-button' id='runCode6' data-action='runCode'
-            data-cell='6' rel='tooltip' data-title='Run Code'>
-            <i class='icon-play'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='testCode6' data-action='testCode'
-             data-cell='6' rel='tooltip' data-title='Test Code'>
-            <i class='icon-check'></i>
-          </a>
-          <a class='btn btn-small iBtn' id='clearResult6' data-action='clearResult'
-             data-cell='6' rel='tooltip' data-title='Clear Output'>
-            <i class="icon-remove"></i>
-          </a>
-          <a class='btn  btn-small iBtn' id='getHint6' rel='tooltip' 
-            data-title="Get Hint" data-action='getHint'
-            data-cell='6' data-hint="">
-            <i class="icon-bookmark"></i>
-          </a>
-        </div>
-      </div>    </form>
-  </div>
-  <div class='span7'>
-    <iframe id="knitResult6" class='shiny-html-output'></iframe>
-  </div>
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>You know you love ggplot, admit it</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Remember don&#39;t have more than 20 words on a slide.</p>
+
 </div>
   </article>
   <!-- Presenter Notes -->
@@ -733,26 +399,20 @@ xtable(head(mtcars))
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Interactive Console'>
+        data-slide=3 title='A Line Chart'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Interactive Chart with Shiny Controls'>
+        data-slide=4 title='Results = Markup'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Interactive Console'>
+        data-slide=5 title='You know you love ggplot, admit it'>
          5
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Results = Markup'>
-         6
       </a>
     </li>
   </ul>
@@ -770,7 +430,6 @@ xtable(head(mtcars))
 <script src="libraries/widgets/quiz/js/mustache.min.js"></script>
 <script src="libraries/widgets/quiz/js/quiz-app.js"></script>
 <script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
-<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
 <script src="libraries/widgets/interactive/js/interactive.js"></script>
 
   <script>  

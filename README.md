@@ -1,3 +1,4 @@
 # Presentation
 
-[http://adam704a.github.com/presentation](http://adam704a.github.com/presentation)
+Check out a demo [here](https://www.adampreston.org/presentation/)
+
